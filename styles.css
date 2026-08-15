@@ -35,7 +35,7 @@ html {
 }
 
 .menu a:hover {
-    color: rgb(0, 30, 255);
+    color: #eeff00;
 }
 
 .logo {
@@ -113,8 +113,13 @@ main {
     text-align: justify;
 }
 
-.turquesa {
-  color: rgb(0, 30, 255);
+.grid-container {
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 1fr;
+}
+
+.sunglare {
+  color: #eeff00;
 }
 
 #contact {
@@ -162,7 +167,7 @@ main {
 }
 
 .lets-talk-row:hover {
-    color: rgb(0, 30, 255);
+    color: #eeff00;
 }
 
 .arrow {
