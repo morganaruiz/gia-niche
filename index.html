@@ -3,14 +3,14 @@
 <head> 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>nina</title>
+<title>gia</title>
 <link rel="stylesheet" href="styles.css">
 <link rel="icon" type="image/x-icon" href="assets/favicon_io/favicon.ico"/>
 </head>
 
 <body>
   <header class="header">
-  <a class="logo" href="#">@nina</a>
+  <a class="logo" href="#">@gia</a>
   
   <nav class="menu">
     <a href="#about" onclick="showAbout('about')">About</a>
@@ -42,7 +42,7 @@
 
     <section id="about" class="page-section">
     <p>
-      im nina, an <span class="turquesa">audiovisual and graphic designer & illustrator</span>
+      im gia, an <span class="turquesa">audiovisual and graphic designer & illustrator</span>
       based in madrid. im passionate about <span class="turquesa">telling 
       meaningful stories</span>, drawing inspiration from films, 
       music and archives.
@@ -50,6 +50,38 @@
       become the best version of myself in the art world.
     </p>
     </section>
+
+    <section id="contact" class="page-section">
+      <div class="contact-details">
+        <p>
+         <strong>email:</strong><br>
+          hello@gia.com</a>
+          <br>
+          <br>
+          <strong>instagram:</strong><br>
+          @gia</a>
+          <br>
+          <br>
+          <strong>address:</strong><br>
+          Developer Inn Highway, 5055 W Irlo Bronson Memorial Hwy,<br>
+          Kissimmee, FL 34746, USA</a>
+        </p>
+      </div>
+    <a class="lets-talk" href="mailto:hello@gia.com">
+      <span class="project-question">got a project in mind?</span>
+      <span class="lets-talk-row">
+        LET'S TALK<span class="arrow">↗</span></span>
+        </span>
+    </a>
+    </section>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <a href="#home" class="back-to-top" aria-label="Back to top">↑</a>
+      </div>
+    </footer>
+
+
   </main>
     <script>
   function showAbout() {
@@ -59,6 +91,7 @@
   function showContact() {
     document.getElementById("home").classList.remove("active");
     document.getElementById("about").classList.remove("active");
+    document.getElementById("contact").classList.add("active");
   }
 </script>
 </body>
