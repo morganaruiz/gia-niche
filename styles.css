@@ -48,6 +48,7 @@ html {
 }
 
 main {
+    position: relative;
     height: calc(100vh - 24px);
 }
 
@@ -60,11 +61,20 @@ main {
     align-items: center;
     height: 110%;
 }
+/* wrapper con altura extra: esa altura de más
+   es la "distancia" que dura la animación */
+
+.home-wrap {
+    position:relative;
+    height: 200vh;
+   }
 
 #home {
-    position: relative;
+    position: sticky;
+    top: 0;
     overflow: hidden;
-    min-height: 100vh;
+    height: 100vh;
+    z-index: 0;
 }
 
 .home-video {
@@ -124,6 +134,14 @@ main {
     from {translate: 0;}
     to {translate: -100%;}
 }
+
+#about {
+    position: relative;
+    z-index: 1;
+    background-color: #fafafa;
+    min-height: 100vh;
+}
+
 
 .about-layout {
     position: relative;
