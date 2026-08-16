@@ -86,16 +86,71 @@
           Magic Castle Inn & Suites, 5051 <br>W Irlo Bronson Memorial Highway, Kissimmee, Florida</a>
         </p>
       </div>
-    <a class="lets-talk" href="mailto:hello@gia.com">
-      <span class="project-question">got a project in mind?</span>
-      <span class="lets-talk-row">
-        LET'S TALK<span class="arrow">↗</span></span>
+      <a class="lets-talk" href="#" onclick="openContactModal(event)">      
+        <span class="project-question">got a project in mind?</span>
+        <span class="lets-talk-row">
+        LET'S TALK<span class="arrow">↗</span>
         </span>
     </a>
     </section>
     </div>
- 
+    <div id="contactModal" class="modal-overlay" onclick="closeOnOverlay(event)">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeContactModal()">&times;</button>
 
+    <h2 class="modal-title">Contact me</h2>
+
+    <div class="modal-content">
+      <div class="modal-info">
+        <p>
+         <strong>email:</strong><br>
+          hello@gia.com</a>
+          <br>
+          <br>
+          <strong>instagram:</strong><br>
+          @gia</a>
+          <br>
+          <br>
+          <strong>address:</strong><br>
+          Magic Castle Inn & Suites, 5051 <br>W Irlo Bronson Memorial Highway, Kissimmee, Florida</a>
+        </p>
+      </div>
+
+      <form class="modal-form" onsubmit="return handleSubmit(event)">
+        <label class="field-label">name (required)</label>
+        <div class="name-row">
+          <div class="field">
+            <span class="field-sublabel">first Name</span>
+            <input type="text" required>
+          </div>
+          <div class="field">
+            <span class="field-sublabel">last Name</span>
+            <input type="text" required>
+          </div>
+        </div>
+
+        <label class="field-label">Service</label>
+        <select>
+          <option>branding</option>
+          <option>illustration</option>
+          <option>audiovisual</option>
+          <option>typeface</option>
+          <option>editorial</option>
+          <option>web design</option>
+          <option>Other</option>
+        </select>
+
+        <label class="field-label">email (required)</label>
+        <input type="email" required>
+
+         <label class="field-label">project description</label>
+        <textarea rows="2"></textarea>
+
+        <button type="submit" class="submit-btn">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
 
   </main>
     <script>
@@ -108,6 +163,33 @@
     document.getElementById("about").classList.remove("active");
     document.getElementById("contact").classList.add("active");
   }
+</script>
+
+<script>
+  function openContactModal(e) {
+    e.preventDefault();
+    document.getElementById('contactModal').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeContactModal() {
+    document.getElementById('contactModal').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  function closeOnOverlay(e) {
+    if (e.target.id === 'contactModal') closeContactModal();
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    window.location.href = "mailto:hello@gia.com";
+    return false;
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeContactModal();
+  });
 </script>
 </body>
 </html>
