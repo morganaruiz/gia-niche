@@ -367,9 +367,19 @@ main {
   color: #010ef9;
 }
 
-/* cursor*/
-.body, a, button, input, select, textarea {
-    cursor: none;
+/* cursor */
+html,
+body,
+* ,
+a,
+button,
+input,
+select,
+textarea,
+img,
+video,
+image {
+    cursor: none !important;
 }
 
 .custom-cursor {
@@ -383,7 +393,7 @@ main {
     pointer-events: none;
     z-index: 9999;
     transform: translate(-50%, -50%);
-    transition: width 0.25s ease; height: 0.25s ease, filter 0.25s ease ;
+    transition: width 0.25s ease, height 0.25s ease, filter 0.25s ease;
     will-change: transform;
 }
 
