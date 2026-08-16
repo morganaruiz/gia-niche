@@ -151,10 +151,10 @@ main {
 }
 
 #about p {
-    top:33%;
+    top:20%;
     max-width: 800px;
     margin: 0;
-    font-size: 30px;
+    font-size: 40px;
     line-height: 1;
     text-align: justify;
     position: relative;
@@ -163,8 +163,8 @@ main {
 
 .subtitulo {
     display: block;
-    max-width: 500px;
-    margin-top: 70px;
+    max-width: 600px;
+    margin-top: 100px;
     font-size: clamp(14px, 1.5vw, 18px);
     line-height: 1.2;
     text-align: justify;
@@ -191,21 +191,6 @@ main {
     position: relative;
     height: 600px;
 }
-
-.contact-details {
-    position: absolute;
-    top: 50%;
-    left: 65%;
-    transform: translateY(-50%);
-    font-size: clamp(13px, 1.5vw, 15px);
-    line-height: 1.2;
-    text-align: justify;
-}
-
-.contact-details a {
-    margin: 0 0 24px;
-}
-
 
 .lets-talk {
     position: absolute;
@@ -239,11 +224,12 @@ main {
 .arrow {
     font-size: 1.4em;
 }
+/* modal*/
 
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(174, 174, 174, 0.6);
   display: none;
   align-items: center;
   justify-content: center;
@@ -260,14 +246,14 @@ main {
   background: #fafafa;
   width: 100%;
   max-width: 900px;
-  max-height: 90vh;
+  max-height: 80vh;
   overflow-y: auto;
-  padding: 48px;
+  padding: 24px;
 }
 
 .modal-close {
   position: absolute;
-  top: 20px;
+  top: 24px;
   right: 24px;
   background: none;
   border: none;
@@ -283,25 +269,28 @@ main {
 
 .modal-title {
   font-size: clamp(48px, 8vw, 96px);
-  font-weight: bold;
   margin: 0 0 40px;
-  line-height: 1;
+  margin-top: 10px;
+  line-height: 0.5;
+  color:#010ef9;
 }
 
 .modal-content {
   display: flex;
-  gap: 40px;
+  gap: 50px;
   flex-wrap: wrap;
 }
 
 .modal-info {
   flex: 1 1 180px;
-  font-size: 13px;
-  line-height: 1.4;
+  font-size: 14px;
+  line-height: 1.2;
 }
 
 .modal-info p {
   margin: 0 0 24px;
+  top: 15%;
+  position: relative;
 }
 
 .modal-form {
@@ -311,10 +300,9 @@ main {
 }
 
 .field-label {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: bold;
-  margin-top: 20px;
-  margin-bottom: 6px;
+  margin-top: 13px;
   display: block;
 }
 
@@ -328,10 +316,10 @@ main {
 }
 
 .field-sublabel {
-  font-size: 11px;
+  font-size: 14px;
   color: #555;
   display: block;
-  margin-bottom: 4px;
+  margin-top: 2px;
 }
 
 .modal-form input[type="text"],
@@ -347,34 +335,60 @@ main {
   outline: none;
 }
 
-.modal-form select {
-  appearance: none;
-  cursor: pointer;
-}
-
-.checkbox-row {
-  margin-top: 20px;
-  font-size: 13px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.checkbox-row input {
-  accent-color: #010ef9;
-}
-
 .submit-btn {
   margin-top: 32px;
+  margin-bottom: 0%;
   align-self: flex-start;
   background: black;
   color: white;
   border: none;
-  padding: 10px 24px;
-  font-size: 13px;
+  padding: 10px 13px;
+  font-size: 14px;
   cursor: pointer;
 }
 
 .submit-btn:hover {
   background: #010ef9;
+}
+
+/* reveal texto*/
+
+
+.word {
+  color: #efefef;
+  transition: color 0.3s ease;
+}
+
+.word.revealed {
+  color: black;
+}
+
+.klein .word.revealed {
+  color: #010ef9;
+}
+
+/* cursor*/
+.body, a, button, input, select, textarea {
+    cursor: none;
+}
+
+.custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 32px;
+    height: 32px;
+    background-image: url('assets/cursor.png');
+    background-size: cover;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: width 0.25s ease; height: 0.25s ease, filter 0.25s ease ;
+    will-change: transform;
+}
+
+.custom-cursor.hover {
+    width: 64px;
+    height: 64px;
+    filter: drop-shadow(0 0 12px #010ef9)
 }
