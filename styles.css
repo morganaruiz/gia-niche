@@ -183,9 +183,110 @@ main {
     z-index: 1;
 }
 
+img[src*="amy2.jpg"] {
+  filter: grayscale(100%);
+  transition: filter 0.5s ease;
+}
+
+img[src*="amy2.jpg"]:hover {
+  filter: grayscale(0%);
+}
+
 .klein {
   color: #010ef9;
 }
+
+/*constelacion*/ 
+#constelacion {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  margin: 4rem auto;
+  aspect-ratio: 1 / 1;
+}
+
+#constelacion-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#constelacion-svg line {
+  stroke: rgba(0, 0, 0, 0.15);
+  stroke-width: 0.3;
+  vector-effect: non-scaling-stroke;
+  transition: stroke 0.4s ease;
+}
+
+.nodo:hover ~ #constelacion-svg line {
+  color: #010ef9;
+  /* si prefieres resaltar solo la línea correspondiente, usa la opción con JS de antes */
+}
+
+.nodo-centro {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: #fafafa;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+  font-size: 13px;
+  text-transform: lowercase;
+  z-index: 2;
+}
+
+.nodo {
+  position: absolute;
+  width: 64px;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 1;
+}
+
+.nodo img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  transition: filter 0.4s ease, width 0.4s ease, height 0.4s ease;
+}
+
+.nodo span {
+  display: block;
+  margin-top: 8px;
+  font-family: sans-serif;
+  font-size: 11px;
+  color: rgba(0, 0, 0, 0.5);
+  white-space: nowrap;
+  text-align: center;
+}
+
+.nodo:hover img {
+  width: 120px;
+  height: 120px;
+}
+
+.nodo:hover span {
+  color: #010ef9;
+}
+
+/* posiciones de cada nodo alrededor del centro */
+.nodo-1 { top: 12%;   left: 50%; }
+.nodo-2 { top: 31%;   left: 82.9%; }
+.nodo-3 { top: 69%;   left: 82.9%; }
+.nodo-4 { top: 88%;   left: 50%; }
+.nodo-5 { top: 69%;   left: 17.1%; }
+.nodo-6 { top: 31%;   left: 17.1%; }
 
 #contact {
     position: relative;
