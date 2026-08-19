@@ -44,6 +44,7 @@
       </div> 
     </section>
 
+    <div class="about-recap-layout">
     <section id="about" class="page-section">
       <div class="about-layout">
       <p>
@@ -65,110 +66,45 @@
         identities and campaigns with both vision and purpose.</span>
     </p>
     <br>
+    </section>
      
-    <img 
-    class="about-image"
-    src =assets/amy2.jpg>
-    </section>
-
-    <section id="constelacion"> 
-  <div class="nodo-centro">gia</div>
-
-  <svg id="constelacion-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
-    <line x1="50" y1="50" x2="50" y2="12"></line>
-    <line x1="50" y1="50" x2="82.9" y2="31"></line>
-    <line x1="50" y1="50" x2="82.9" y2="69"></line>
-    <line x1="50" y1="50" x2="50" y2="88"></line>
-    <line x1="50" y1="50" x2="17.1" y2="69"></line>
-    <line x1="50" y1="50" x2="17.1" y2="31"></line>
-  </svg>
-
-  <div class="nodo nodo-1">
-    <img src="assets/soviet.jpg" alt="soviet">
-    <span>soviet movies before 2003</span>
+    <section class="recap" aria-label="Resumen mensual">
+  <div class="recap-head">
+    <p class="recap-eyebrow">archive — 2026</p>
   </div>
 
-  <div class="nodo nodo-2">
-    <img src="assets/camp2.jpg" alt="camp">
-    <span>camp universe</span>
-  </div>
-
-  <div class="nodo nodo-3">
-    <img src="assets/change.jpg" alt="change">
-    <span>spiritualism</span>
-  </div>
-
-  <div class="nodo nodo-4">
-    <img src="assets/fashion.jpg" alt="fashion">
-    <span>dreamy fashion</span>
-  </div>
-
-  <div class="nodo nodo-5">
-    <img src="assets/florida.jpg" alt="florida">
-    <span>the florida project by sean baker, 2017</span>
-  </div>
-
-  <div class="nodo nodo-6">
-    <img src="assets/blaqchyna.jpg" alt="blaqchyna">
-    <span>2016 internet culture</span>
-  </div>
-</section>
-
-    <section id="contact" class="page-section">
-      <a class="lets-talk" href="#" onclick="openContactModal(event)">      
-        <span class="project-question">got a project in mind?</span>
-        <span class="lets-talk-row">
-        LET'S TALK<span class="arrow">↗</span>
-        </span>
-    </a>
-    </section>
+    <div class="recap-grid">
+    <figure class="recap-card">
+      <img class="recap-thumb" src="assets/aa.jpg" alt="Fotografía de octubre">
+      <figcaption>
+        <span class="recap-month">identity crisis</span>
+        <span class="recap-score">42</span>
+      </figcaption>
+    </figure>
+    <figure class="recap-card">
+      <img class="recap-thumb" src="assets/hh.jpg" alt="Fotografía de septiembre">
+      <figcaption>
+        <span class="recap-month">overconsumption</span>
+        <span class="recap-score">95</span>
+      </figcaption>
+    </figure>
+    <figure class="recap-card">
+      <img class="recap-thumb" src="assets/cc.jpg" alt="Fotografía de agosto">
+      <figcaption>
+        <span class="recap-month">winter</span>
+        <span class="recap-score">20</span>
+      </figcaption>
+    </figure>
+    <figure class="recap-card">
+      <img class="recap-thumb" src="assets/ii.jpg" alt="Fotografía de julio">
+      <figcaption>
+        <span class="recap-month">i💙florida</span>
+        <span class="recap-score">66</span>
+      </figcaption>
+    </figure>
     </div>
-    <div id="contactModal" class="modal-overlay" onclick="closeOnOverlay(event)">
-  <div class="modal-box">
-    <button class="modal-close" onclick="closeContactModal()">&times;</button>
 
-    <h2 class="modal-title">contact me</h2>
-
-    <div class="modal-content">
-      <div class="modal-info">
-        <p>
-         <strong>email:</strong><br>
-          hello@gia.com</a>
-          <br>
-          <br>
-          <strong>instagram:</strong><br>
-          @gia</a>
-          <br>
-          <br>
-          <strong>address:</strong><br>
-          Magic Castle Inn & Suites, 5051 <br>W Irlo Bronson Memorial Highway, Kissimmee, Florida</a>
-        </p>
-      </div>
-
-      <form class="modal-form" onsubmit="return handleSubmit(event)">
-        <label class="field-label">name</label>
-        <div class="name-row">
-          <div class="field">
-            <span class="field-sublabel">first name</span>
-            <input type="text" required>
-          </div>
-          <div class="field">
-            <span class="field-sublabel">last name</span>
-            <input type="text" required>
-          </div>
-        </div>
-        <label class="field-label">email</label>
-        <input type="email" required>
-
-         <label class="field-label">project description</label>
-        <textarea rows="2"></textarea>
-
-        <button type="submit" class="submit-btn">submit</button>
-      </form>
-    </div>
-  </div>
-</div>
-
+   
   </main>
     <script> // header buttom
   function showAbout() {
@@ -180,33 +116,6 @@
     document.getElementById("about").classList.remove("active");
     document.getElementById("contact").classList.add("active");
   }
-</script>
-
-<script> //modal
-  function openContactModal(e) {
-    e.preventDefault();
-    document.getElementById('contactModal').classList.add('active');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeContactModal() {
-    document.getElementById('contactModal').classList.remove('active');
-    document.body.style.overflow = '';
-  }
-
-  function closeOnOverlay(e) {
-    if (e.target.id === 'contactModal') closeContactModal();
-  }
-
-  function handleSubmit(e) {
-    e.preventDefault();
-    window.location.href = "mailto:hello@gia.com";
-    return false;
-  }
-
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') closeContactModal();
-  });
 </script>
 
 <script> //reveal on scroll
@@ -294,5 +203,50 @@
   document.addEventListener('mouseenter', () => cursor.style.opacity = '1');
 </script>
 
+<script> // player
+  (function () {
+    const audio = document.getElementById('player');
+    const bar = document.getElementById('player-bar');
+    const btn = document.getElementById('player-toggle');
+    const iconPlay = document.getElementById('icon-play');
+    const iconPause = document.getElementById('icon-pause');
+    const fill = document.getElementById('player-progress-fill');
+
+    btn.addEventListener('click', function () {
+      if (audio.paused) {
+        audio.play().catch(function () {
+          // Si el navegador bloquea la reproducción o falta el archivo,
+          // no rompe la página, simplemente no reproduce.
+        });
+      } else {
+        audio.pause();
+      }
+    });
+
+    audio.addEventListener('play', function () {
+      bar.classList.add('is-playing');
+      iconPlay.style.display = 'none';
+      iconPause.style.display = 'block';
+      btn.setAttribute('aria-label', 'Pausar');
+    });
+
+    audio.addEventListener('pause', function () {
+      bar.classList.remove('is-playing');
+      iconPlay.style.display = 'block';
+      iconPause.style.display = 'none';
+      btn.setAttribute('aria-label', 'Reproducir');
+    });
+
+    audio.addEventListener('timeupdate', function () {
+      if (audio.duration) {
+        fill.style.width = (audio.currentTime / audio.duration * 100) + '%';
+      }
+    });
+
+    audio.addEventListener('ended', function () {
+      fill.style.width = '0%';
+    });
+  })();
+</script>
 </body>
 </html>
