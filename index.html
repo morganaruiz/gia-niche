@@ -22,7 +22,7 @@
     <div class="home-wrap">
     <section id="home"class="page-section active">
       <video class="home-video" autoplay muted loop playsinline>
-        <source src="assets/gia.mp4" type="video/mp4"></video>
+        <source src="assets/gia video.mp4" type="video/mp4"></video>
       </video>
       <div class="carrousel">
       <div class="group">
@@ -44,66 +44,17 @@
       </div> 
     </section>
 
-    <div class="about-recap-layout">
-    <section id="about" class="page-section">
-      <div class="about-layout">
-      <p>
-      <span class="intro">im gia, an <span class="klein">audiovisual and graphic designer & illustrator</span>
-      based in madrid. im passionate about <span class="klein">telling 
-      meaningful stories</span>, drawing inspiration from films, 
-      music and archives.</span><br>
-      <span class="subtitulo">im continually driven to grow as a creative and to
-        refine my craft within the art and design world. my goal is to 
-        <span class="klein">become a creative director</span>, leading bold, 
-        meaningful visual narratives that connect 
-        brands with their audiences. i stay closely attuned to emerging trends and 
-        the pulse of pop culture, using that awareness to inform work that feels
-        current, relevant and resonant. one of my core strengths lies in developing
-        original creative concepts and translating ideas into compelling visual proposals.
-        <span class="klein">bridging stratetic thinking with strong aesthetic execution.
-        </span>looking ahead, i am especially drawn to the marketing and advertising space,
-        where i hope to grow into a creative director role that allows me to shape brand 
-        identities and campaigns with both vision and purpose.</span>
-    </p>
-    <br>
-    </section>
-     
-    <section class="recap" aria-label="Resumen mensual">
-  <div class="recap-head">
-    <p class="recap-eyebrow">archive — 2026</p>
-  </div>
+   
+<section class="about2" aria-label="about2">
+  <div class="about2-layout">
+  <div class="about2-photo">
+  <p class="about2-caption about2-caption--top">hi im gia, an audiovisual, graphic designer & illustrator based in florida. im passionate about telling meaningful stories, drawing inspiration from films, music and archives.</p>
+  <img src="/assets/kate.jpg">
+  <p class="about2-caption about2-caption--bottom">Tu texto de abajo</p>
+</div>
+</div>
 
-    <div class="recap-grid">
-    <figure class="recap-card">
-      <img class="recap-thumb" src="assets/aa.jpg" alt="Fotografía de octubre">
-      <figcaption>
-        <span class="recap-month">identity crisis</span>
-        <span class="recap-score">42</span>
-      </figcaption>
-    </figure>
-    <figure class="recap-card">
-      <img class="recap-thumb" src="assets/hh.jpg" alt="Fotografía de septiembre">
-      <figcaption>
-        <span class="recap-month">overconsumption</span>
-        <span class="recap-score">95</span>
-      </figcaption>
-    </figure>
-    <figure class="recap-card">
-      <img class="recap-thumb" src="assets/cc.jpg" alt="Fotografía de agosto">
-      <figcaption>
-        <span class="recap-month">winter</span>
-        <span class="recap-score">20</span>
-      </figcaption>
-    </figure>
-    <figure class="recap-card">
-      <img class="recap-thumb" src="assets/ii.jpg" alt="Fotografía de julio">
-      <figcaption>
-        <span class="recap-month">i💙florida</span>
-        <span class="recap-score">66</span>
-      </figcaption>
-    </figure>
-    </div>
-
+</section>
    
   </main>
     <script> // header buttom
@@ -156,7 +107,7 @@
       1
     );
 
-    const revealCount = Math.floor(progress * words.length * 3.2);
+    const revealCount = Math.floor(progress * words.length *2.3);
 
     words.forEach((word, i) => {
       word.classList.toggle('revealed', i < revealCount);
@@ -166,87 +117,7 @@
   window.addEventListener('scroll', revealOnScroll);
   window.addEventListener('resize', revealOnScroll);
   revealOnScroll();
-
-
 </script> 
 
-  <div id="customCursor" class="custom-cursor"></div> 
-  <script> //cursor
-  const cursor = document.getElementById('customCursor');
-  let mouseX = 0, mouseY = 0;
-  let cursorX = 0, cursorY = 0;
-
-  window.addEventListener('mousemove', e => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-  });
-
-  // easing suave: la burbuja "persigue" al ratón en vez de saltar directo
-  function animateCursor() {
-    cursorX += (mouseX - cursorX) * 0.15;
-    cursorY += (mouseY - cursorY) * 0.15;
-    cursor.style.transform = `translate(-50%, -50%) translate(${cursorX}px, ${cursorY}px)`;
-    requestAnimationFrame(animateCursor);
-  }
-  animateCursor();
-
-  // crece sobre enlaces, imágenes y elementos interactivos
-  const hoverTargets = document.querySelectorAll('a, button, img, video, image, select, input, textarea, .word');
-
-  hoverTargets.forEach(el => {
-    el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
-    el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
-  });
-
-  // oculta la burbuja si el ratón sale de la ventana
-  document.addEventListener('mouseleave', () => cursor.style.opacity = '0');
-  document.addEventListener('mouseenter', () => cursor.style.opacity = '1');
-</script>
-
-<script> // player
-  (function () {
-    const audio = document.getElementById('player');
-    const bar = document.getElementById('player-bar');
-    const btn = document.getElementById('player-toggle');
-    const iconPlay = document.getElementById('icon-play');
-    const iconPause = document.getElementById('icon-pause');
-    const fill = document.getElementById('player-progress-fill');
-
-    btn.addEventListener('click', function () {
-      if (audio.paused) {
-        audio.play().catch(function () {
-          // Si el navegador bloquea la reproducción o falta el archivo,
-          // no rompe la página, simplemente no reproduce.
-        });
-      } else {
-        audio.pause();
-      }
-    });
-
-    audio.addEventListener('play', function () {
-      bar.classList.add('is-playing');
-      iconPlay.style.display = 'none';
-      iconPause.style.display = 'block';
-      btn.setAttribute('aria-label', 'Pausar');
-    });
-
-    audio.addEventListener('pause', function () {
-      bar.classList.remove('is-playing');
-      iconPlay.style.display = 'block';
-      iconPause.style.display = 'none';
-      btn.setAttribute('aria-label', 'Reproducir');
-    });
-
-    audio.addEventListener('timeupdate', function () {
-      if (audio.duration) {
-        fill.style.width = (audio.currentTime / audio.duration * 100) + '%';
-      }
-    });
-
-    audio.addEventListener('ended', function () {
-      fill.style.width = '0%';
-    });
-  })();
-</script>
 </body>
 </html>
