@@ -36,7 +36,7 @@ html {
 }
 
 .menu a:hover {
-    color: #010ef9;
+    color:  rgb(1, 14, 249);
 }
 
 .logo {
@@ -139,12 +139,12 @@ main {
 .about2 {
   position: relative;
   z-index: 1;
-  background-color: #010ef9;
+  background-color: rgb(1, 14, 249);
   width: 100%;
   min-width: 100%;
-  min-height: 100vh;
-  min-height: 100svh;
+  min-height: 130vh;
 }
+
 .about2-layout {
   position: relative;
   width: 100%;
@@ -154,7 +154,7 @@ main {
 
 .about2-photo {
   position: absolute;
-  transform: translate(216px, 170px);
+  transform: translate(216px, 130px);
   z-index: 1;
   width: clamp(140px, 30vw, 236px);
 }
@@ -174,10 +174,32 @@ main {
 
 .about2-caption {
   margin: 0;
-  font-size: 11px;
-  line-height: 1.4;
+  font-size: 12px;
+  line-height: 1.3;
   color: #fafafa;
+  text-align: justify ;
 }
 
-.about2-caption--top { margin-bottom: 10px; letter-spacing: 0.1px}
-.about2-caption--bottom { margin-top: 10px; }
+.about2-caption--top { margin-bottom: 10px; letter-spacing: 0px;}
+.about2-caption--bottom { margin-top: 10px; letter-spacing: -0.3px;}
+
+.about2-photo--right {
+  position: absolute;
+  right: 0;
+  transform: translate(-216px, 280px);
+  z-index: 1;
+  width: clamp(140px, 30vw, 236px);
+}
+
+.about2-photo--right img {
+  width: 100%;
+  aspect-ratio: 236 / 320;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .about2-photo--right {
+    transform: translate(-10vw, 15vh);
+  }
+}
